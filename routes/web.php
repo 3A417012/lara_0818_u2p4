@@ -15,6 +15,12 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('posts', ['as' => 'posts.index', 'uses' => 'PostsController@index']);
+Route::get('post', ['as' => 'posts.show', 'uses' => 'PostsController@show']);
+Route::get('about', ['as' => 'posts.about', 'uses' => 'PostsController@about']);
+Route::get('contact', ['as' => 'posts.contact', 'uses' => 'PostsController@contact']);
+
+/*
 Route::get('posts', ['as' => 'posts.index', 'uses' => function () {
     return view('index');
 }]);
@@ -30,3 +36,4 @@ Route::get('about', ['as' => 'posts.about', 'uses' => function () {
 Route::get('contact', ['as' => 'posts.contact', 'uses' => function () {
     return view('contact');
 }]);
+*/
