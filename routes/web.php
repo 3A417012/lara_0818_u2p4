@@ -12,5 +12,21 @@
 */
 
 Route::get('/', function () {
-    return view('about');
+    return view('index');
 });
+
+Route::get('posts', ['as' => 'posts.index', 'uses' => function () {
+    return view('index');
+}]);
+
+Route::get('post', ['as' => 'posts.post', 'uses' => function () {
+    return view('post');
+}]);
+
+Route::get('about', ['as' => 'posts.about', 'uses' => function () {
+    return view('about');
+}]);
+
+Route::get('contact', ['as' => 'posts.contact', 'uses' => function () {
+    return view('contact');
+}]);
